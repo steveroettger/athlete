@@ -1,8 +1,9 @@
 Athlete::Application.routes.draw do
-  get "pages/home"
-
-  get "pages/about"
-
-  get "pages/contact"
+  root to: 'pages#home'
+  match '/about', to: 'pages#about'
+  match '/faq', to: 'pages#faq'
+  match '/terms', to: 'pages#terms'
+  match '/contact', to: 'pages#contact'
+  
 
 end

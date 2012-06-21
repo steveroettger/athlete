@@ -10,20 +10,18 @@
   <![endif]-->
 </head>
 <body>
-  <header class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-	  <div class="container">
-	    <%= link_to "athlete", '#', id: "logo" %>
-	    <nav>
-	      <ul class="nav pull-right">
-	        <li><%= link_to "Sign in with Facebook", '#' %></li>
-	      </ul>
-	    </nav>
-	  </div>
-	</div>
-  </header>
-  <div class="container">
-    <%= yield %>
-  </div>
+  <!--This is the partial that loads the _header.html.erb file-->	
+  <%= render 'layouts/header' %>
+  <section class="container">
+	<% flash.each do |name, msg| %>
+	  <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+		<a class="close" data-dismiss="alert">×</a><!--/.close-->
+		<%= msg %>
+	  </div><!--/.alert.alert-'name'--> 
+    <% end %>
+	<%= yield %>
+  <!--This is the partial that loads the _footer.html.erb file-->
+  <%= render 'layouts/footer' %> 
+  </section><!--/#container-->
 </body>
 </html>
