@@ -20,6 +20,8 @@ describe "Pages" do
     page.should have_selector 'title', text: full_title("FAQ's")
     click_link "Terms"
     page.should have_selector 'title', text: full_title('Terms')
+    click_link "Privacy"
+    page.should have_selector 'title', text: full_title('Privacy')
     click_link "Contact"
     page.should have_selector 'title', text: full_title('Contact')
   end
@@ -54,6 +56,14 @@ describe "Pages" do
     let(:page_title) { 'Terms' }
     it_should_behave_like "all static pages"
     it { should have_selector('title', text: full_title('Terms')) }
+  end
+  
+  describe "Privacy page" do
+    before { visit privacy_path }
+    let(:heading) { 'Privacy Policy' }
+    let(:page_title) { 'Privacy' }
+    it_should_behave_like "all static pages"
+    it { should have_selector('title', text: full_title('Privacy')) }
   end
   
   describe "Contact page" do
