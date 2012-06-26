@@ -2,6 +2,7 @@
 
 
 /*-----------COLORS----------*/
+$white: #fff;
 $blue: #809fff;
 $blueLighter: #A4CFFF;
 $gray: #666;
@@ -44,7 +45,7 @@ hr.thick {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
-  color: #666;
+  color: $gray;
 }
 
 h1 {
@@ -65,7 +66,7 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
-  color: #777;
+  color: $grayMedium;
 }
 
 /*----------HEADER----------*/
@@ -74,7 +75,7 @@ p {
 }
 
 .nav.pull-right li a, .nav.pull-right li a:visited {
-	color: #fff;
+	color: $white;
 	&:hover { text-decoration: underline; }
 }
 
@@ -82,7 +83,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: $white;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -91,7 +92,7 @@ p {
 }
 
 #logo:hover {
-  color: #fff;
+  color: $white;
   text-decoration: none;
 }
 
@@ -122,4 +123,8 @@ footer {
     height: 14px;
     background-color: $grayLighter;
   }
+	
+  p.copyright {
+	float: right;
+  }	
 }
