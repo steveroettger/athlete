@@ -6,5 +6,12 @@ Athlete::Application.routes.draw do
   match '/privacy', to: 'pages#privacy'
   match '/contact', to: 'pages#contact'
   
+  #Omniauth Login Routes/Redirects
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
+  
+  #Users
+  resources :users
 
 end

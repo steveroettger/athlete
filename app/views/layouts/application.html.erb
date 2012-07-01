@@ -10,6 +10,18 @@
   <![endif]-->
 </head>
 <body>
+<% if current_user %>  
+  <!--This is the partial that loads the _header.html.erb file-->	
+  <%= render 'layouts/header' %>
+  <section class="container">
+	<% flash.each do |name, msg| %>
+	  <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+		<a class="close" data-dismiss="alert">×</a><!--/.close-->
+		<%= msg %>
+	  </div><!--/.alert.alert-'name'--> 
+    <% end %>
+	<%= yield %>
+<% else %>
   <!--This is the partial that loads the _header.html.erb file-->	
   <%= render 'layouts/header' %>
   <section class="container">
@@ -21,7 +33,8 @@
     <% end %>
 	<%= yield %>
   <!--This is the partial that loads the _footer.html.erb file-->
-  <%= render 'layouts/footer' %> 
+  <%= render 'layouts/footer' %>
+<% end %> 
   </section><!--/#container-->
 </body>
 </html>

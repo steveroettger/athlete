@@ -10,7 +10,7 @@ describe "Pages" do
   
   it "should have the right links on the layout" do
     visit root_path
-    click_link "student athlete"
+    click_link "studentathlete.me"
     page.should have_selector 'title', text: full_title('Welcome')
     click_link "Home"
     page.should have_selector 'title', text: full_title('Welcome')
@@ -28,7 +28,7 @@ describe "Pages" do
   
   describe "Home page" do
     before { visit root_path }
-    let(:heading)  { 'Student Athlete' }
+    let(:heading)  { 'studentathlete.me' }
     let(:page_title) { 'Welcome' }
     it_should_behave_like "all static pages"
     it { should have_selector('title', text: full_title('Welcome')) }

@@ -1,11 +1,24 @@
+// Override Bootstrap Styles
+$navbarLinkColor: #fff;
+$dropdownLinkColor: #666;
+$dropdownLinkColorHover: #fff;
+$dropdownLinkBackgroundHover: #007ACC;
+$navbarSearchBackground: #464646;
+$navbarSearchBackgroundFocus: #ccc;
+$navbarSearchPlaceholderColor: #fff;
+
 @import "bootstrap";
 
+body { padding-top: 60px; }
+
+@import "bootstrap-responsive";
 
 /*-----------COLORS----------*/
 $white: #fff;
-$blue: #809fff;
-$blueLighter: #A4CFFF;
+$black: #000;
+$blue: #007ACC;
 $gray: #666;
+$grayDark: #464646;
 $grayMedium: #777;
 $grayLighter: #999; 
 
@@ -45,7 +58,7 @@ hr.thick {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
-  color: $gray;
+  color: $black;
 }
 
 h1 {
@@ -66,25 +79,19 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
-  color: $grayMedium;
+  color: $gray;
 }
 
 /*----------HEADER----------*/
 .navbar-inner {
-	background: $blue;
-}
-
-.nav.pull-right li a, .nav.pull-right li a:visited {
-	color: $white;
-	&:hover { text-decoration: underline; }
+	background: $black;
 }
 
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: $white;
-  text-transform: uppercase;
+  color: $blue;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
@@ -92,8 +99,17 @@ p {
 }
 
 #logo:hover {
-  color: $white;
   text-decoration: none;
+}
+
+form.navbar-search {
+	padding-left: 20px;
+	
+	.add-on {
+		margin-right: -5px;
+		background: $grayDark;
+		border-color: $black;
+	}
 }
 
 /*----------FOOTER----------*/
@@ -103,7 +119,7 @@ footer {
  
   p {
 	line-height: 1.2em !important;
-	color: $grayLighter;
+	color: $black;
   }
   
   .nav a, .nav a:visited {
@@ -111,7 +127,7 @@ footer {
     top: -3px;
     display: inline-block;
     text-decoration: none;
-    color: $grayLighter;
+    color: $black;
     &:hover { color: $blue; text-decoration: none; }
   }  
 
@@ -121,7 +137,7 @@ footer {
     padding:1px 0 1px 0;
     width: 1px;
     height: 14px;
-    background-color: $grayLighter;
+    background-color: $black;
   }
 	
   p.copyright {
