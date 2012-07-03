@@ -1,4 +1,5 @@
 Athlete::Application.routes.draw do
+  
   root to: 'pages#home'
   match '/about',   to: 'pages#about'
   match '/faq',     to: 'pages#faq'
@@ -13,5 +14,9 @@ Athlete::Application.routes.draw do
   
   #Users
   resources :users
+  
+  #Sports
+  resources :male_sports
+  resources :female_sports
 
 end

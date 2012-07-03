@@ -1,0 +1,28 @@
+/*-----------PROFILE EDIT SECTION----------*/
+section.profile-block {
+	float: right;
+	padding: 1.3em;
+	background-color: rgba(#464646, 0.1);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
+	header {
+		.profile-img {
+			margin-left: 30px;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+		}
+	
+	
+		h1 {
+	
+		}
+	}
+	
+	input, textarea {
+		width: 75%;
+	}
+}
+

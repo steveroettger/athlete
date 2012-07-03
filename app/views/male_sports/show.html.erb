@@ -1,0 +1,28 @@
+<%- model_class = @male_sport.class -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+<table class="table table-striped table-bordered">
+  <tbody>
+	<tr>
+	  <td><%= model_class.human_attribute_name(:title) %>:</td>
+	  <td><%= model_class.human_attribute_name(:image_url) %>:</td>	  
+	</tr>
+	<tr>
+	  <td><%= @male_sport.title %></td>
+	  <td><%= @male_sport.image_url %></td>
+	</tr>
+  </tbody>
+</table>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              male_sports_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_male_sport_path(@male_sport), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              male_sport_path(@male_sport),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

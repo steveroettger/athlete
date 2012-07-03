@@ -1,0 +1,36 @@
+<%- model_class = MaleSport.new.class -%>
+<div class="page-header">
+  <h1>Male Sports Index:</h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:image_url) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @male_sports.each do |male_sport| %>
+      <tr>
+        <td><%= link_to male_sport.id, male_sport_path(male_sport) %></td>
+        <td><%= male_sport.title %></td>
+        <td><%= male_sport.image_url %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_male_sport_path(male_sport), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      male_sport_path(male_sport),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_male_sport_path,
+            :class => 'btn btn-primary' %>

@@ -1,0 +1,9 @@
+<%= simple_form_for @female_sport, :html => { :class => 'form-vertical' } do |f| %>
+  <%= f.input :title %>
+  <%= f.input :image_url %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                female_sports_path, :class => 'btn' %>
+  </div>
+<% end %>
