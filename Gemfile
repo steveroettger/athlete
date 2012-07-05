@@ -6,6 +6,7 @@ gem 'rails', '3.2.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem "simple_form", "~> 2.0.2"
+gem 'activeadmin'
 
 
 # Gems used only for assets and not required

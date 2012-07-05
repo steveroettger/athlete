@@ -1,5 +1,9 @@
 Athlete::Application.routes.draw do
   
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   root to: 'pages#home'
   match '/about',   to: 'pages#about'
   match '/faq',     to: 'pages#faq'
@@ -15,8 +19,9 @@ Athlete::Application.routes.draw do
   #Users
   resources :users
   
-  #Sports
-  resources :male_sports
-  resources :female_sports
-
+  devise_scope :admin_user do
+    #Sports
+    resources :male_sports
+    resources :female_sports
+  end
 end
