@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :school_year, :location, :high_school, :goal, :fb_link, :flickr_link, 
                   :youtube_link
   
+  validates :goal, length: { maximum: 150 }
   
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|

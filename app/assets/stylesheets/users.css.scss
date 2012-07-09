@@ -13,9 +13,13 @@
     }
 
 	img {
+	  margin-right: 0.40em;
 	  -webkit-border-radius: 3px;
       -moz-border-radius: 3px;
-	  border-radius: 3px;	
+	  border-radius: 3px;
+	  -moz-box-shadow: 3px 4px 5px #000000;
+	  -webkit-box-shadow: 3px 4px 5px #000000;
+	  box-shadow: 3px 4px 5px #000000;	
 	}
 	
 	a, a:visited {
@@ -37,10 +41,13 @@ section.profile-block {
 	
 	header {
 		.profile-img {
-			margin-left: 30px;
+			margin-left: 2.1em;
 			-webkit-border-radius: 3px;
 			-moz-border-radius: 3px;
 			border-radius: 3px;
+			-moz-box-shadow: 3px 4px 5px #000000;
+			-webkit-box-shadow: 3px 4px 5px #000000;
+			box-shadow: 3px 4px 5px #000000;
 		}
 	}
 	
