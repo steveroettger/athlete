@@ -6,6 +6,7 @@
 	  <% else %>
 		<%= link_to "studentathlete.me", current_user, id: "logo" %>
 	 <% end %>
+	 <% if current_user %>
 	  <nav>
 		<form class="navbar-search">
 		  <div class="input-prepend">
@@ -14,7 +15,7 @@
 		  </div>
 		</form>
 	    <ul class="nav pull-right">
-		<% if current_user %>
+		
 		  <div class="btn-group">
 		  	<a class="btn btn-primary">
 				<i class="icon-user icon-white"></i>
@@ -31,7 +32,10 @@
 			</ul>
 		  </div><!--/.btn-group-->
 	    <% else %>   
-	      <li><%= link_to "Sign in with Facebook", '/auth/facebook' %></li>
+	      <ul class="nav pull-right">	
+			<li><%= link_to 'Sign up', '#' %></li>
+			<li><%= link_to 'Sign in', '/auth/facebook' %></li>
+		  </ul>
 	    <% end %>
 	    </ul><!--/.nav.pull-right-->
 	  </nav>

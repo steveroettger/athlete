@@ -112,11 +112,17 @@ form.navbar-search {
 	}
 }
 
+ul.nav.pull-right li {
+	border-left: 1px solid $white;
+	&:hover { background-color: $blue; }
+	&:last-child { border-right: 1px solid $white; }
+}
+
 /*----------FOOTER----------*/
 footer {
   margin-top: 50px;
   padding-top: 5px;
- 
+
   p {
 	line-height: 1.2em !important;
 	color: $black;

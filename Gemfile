@@ -7,6 +7,8 @@ gem 'rails', '3.2.3'
 
 gem "simple_form", "~> 2.0.2"
 gem 'activeadmin'
+gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate', '0.0.7'
 
 
 # Gems used only for assets and not required

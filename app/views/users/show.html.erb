@@ -1,20 +1,33 @@
-<% provide(:title, current_user.name) %>
-<h1><%= current_user.name %></h1>
-<table class="table table-striped table-bordered">
-	<tbody>
-		<tr>
-			<td>User Full Name</td>
-			<td><%= @user.name %></td>
-		</tr>
-		
-		<tr>
-			<td>User Location</td>
-			<td><%= @user.location %></td>
-		</tr>
-		<tr>
-			<td>FB Username URL</td>
-			<td><%= @user.fb_link %></td>
-		</tr>
-		
-	</tbody>
-</table><!--/ .table .table-striped .table-bordered--> 
+<% provide(:title, @user.name) %>
+<section class="profile-block">
+	<div class="row">
+		<div class="span4">
+			<header class="row center">
+			  <div class="span4"><h1><%= @user.name %></h1></div>
+			  <div class="span4"><%= @user.school_year %></div>
+    		</header>
+			<section class="row center">
+				<div class="span4"><%= @user.high_school %></div>
+				<div class="span4"><%= @user.location %></div>
+			</section>
+			<section class="row center">
+				<div class="span4"><h2>highlights</h2></div>
+				dropdown to choose a sport<br/>
+				input field for position<br/>
+				input field for coach
+			</section>
+			<section class="row center">
+				<div class="span4">
+					<p class="services-nav">
+					  <%= link_to youtube_icon, @user.youtube_link, target: '_blank' %>
+					  <%= link_to flickr_icon, @user.flickr_link, target: '_blank' %>
+					  <%= link_to facebook_icon, @user.fb_link, target: '_blank' %>
+					</p>
+				</div>
+			</section>
+			<section class="row center">
+				<div class="span4"><h2>sports</h2></div>
+			</section>
+    	</div>
+	</div>
+</section>

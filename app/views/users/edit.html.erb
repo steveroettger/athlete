@@ -1,10 +1,10 @@
-<% provide(:title, "Edit #{current_user.name}") %> 
+<% provide(:title, "Edit #{@user.name}") %> 
 <section class="profile-block">
 	<div class="row">
 		<div class="span5">
 			<header class="row">
-			  <div class="span1"><%= image_tag current_user.profile_image, class: 'profile-img' %></div>
-			  <div class="span4"><h1><%= current_user.name %></h1></div>
+			  <div class="span1"><%= image_tag @user.profile_image, class: 'profile-img' %></div>
+			  <div class="span4"><h1><%= @user.name %></h1></div>
     		</header>
     	</div>
 	</div>
@@ -19,9 +19,8 @@
 		</ul><!--/ul.nav.nav-tabs-->
 		<div class="tab-content">
 			<div class="tab-pane active" id="tab1">
-		  		<%= simple_form_for current_user, :html => { class: 'form-vertical' } do |f| %>
+		  		<%= simple_form_for @user, :html => { class: 'form-vertical' } do |f| %>
 					<%= f.input :name %>
-					<%= f.input :username %>
 					<%= f.input :school_year, label: 'School Year', placeholder: 'i.e. Junior' %>
 					<%= f.input :location, placeholder: 'i.e. Wilmington, DE' %>
 					<%= f.input :high_school, label: 'High School', 
@@ -30,14 +29,14 @@
 	      	    <% end %>
 			</div><!--/div.tab-pane.active-->
 			<div class="tab-pane" id="tab2">
-				<%= simple_form_for current_user, :html => { class: 'form-vertical' } do |f| %>
+				<%= simple_form_for @user, :html => { class: 'form-vertical' } do |f| %>
 					<%= f.input :goal, label: 'What is your goal this year?', as: 'text', 
 					                   input_html: { cols: 50, rows: 5 }  %>
 				    <%= f.submit "Save", class: "btn btn-large btn-primary" %>
 			    <% end %>
 			</div><!--/div.tab-pane-->
 			<div class="tab-pane" id="tab3">
-				<%= simple_form_for current_user, :html => { class: 'form-vertical' } do |f| %>
+				<%= simple_form_for @user, :html => { class: 'form-vertical' } do |f| %>
 					<%= f.input :fb_link, label: 'Facebook' %>
 					<%= f.input :flickr_link, label: 'Flickr' %>
 					<%= f.input :youtube_link, label: 'Youtube' %>
@@ -45,10 +44,13 @@
 				<% end %>
 			</div><!--/div.tab-pane-->
 			<div class="tab-pane" id="tab4">
-				<p>test content</p>
+				<p>dropdown to choose a sport</p>
+				<p>input field for position</p>
+				<p>input field for coach</p>
 			</div><!--/div.tab-pane-->
 			<div class="tab-pane" id="tab5">
-				<p>more test content</p>
+				<div class="btn btn-primary">Share on Facebook</div><br/><br/>
+				<div class="btn btn-primary">Invite Teammates</div>
 			</div><!--/div.tab-pane-->
 		</div><!--/div.tab-content-->
 	</div><!--/div.tabbable.span5-->
