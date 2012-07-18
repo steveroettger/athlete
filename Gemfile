@@ -9,6 +9,7 @@ gem "simple_form", "~> 2.0.2"
 gem 'activeadmin'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.7'
+gem 'friendly_id'
 
 
 # Gems used only for assets and not required
@@ -48,6 +49,7 @@ gem 'jquery-rails'
 	gem 'sqlite3'
 	gem 'rspec-rails', '2.10.0'
 	gem "capybara", "~> 1.1.2"
+	gem 'factory_girl_rails', '1.4.0'
   end  
 
 # Development Database Architecture

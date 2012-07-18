@@ -1,33 +1,42 @@
 <% provide(:title, @user.name) %>
+<header class="goal">
+	<h1><%= @user.goal %></h1>
+</header>
+
 <section class="profile-block">
-	<div class="row">
-		<div class="span4">
-			<header class="row center">
-			  <div class="span4"><h1><%= @user.name %></h1></div>
-			  <div class="span4"><%= @user.school_year %></div>
-    		</header>
-			<section class="row center">
-				<div class="span4"><%= @user.high_school %></div>
-				<div class="span4"><%= @user.location %></div>
-			</section>
-			<section class="row center">
-				<div class="span4"><h2>highlights</h2></div>
-				dropdown to choose a sport<br/>
-				input field for position<br/>
-				input field for coach
-			</section>
-			<section class="row center">
-				<div class="span4">
-					<p class="services-nav">
-					  <%= link_to youtube_icon, @user.youtube_link, target: '_blank' %>
-					  <%= link_to flickr_icon, @user.flickr_link, target: '_blank' %>
-					  <%= link_to facebook_icon, @user.fb_link, target: '_blank' %>
-					</p>
-				</div>
-			</section>
-			<section class="row center">
-				<div class="span4"><h2>sports</h2></div>
-			</section>
-    	</div>
-	</div>
-</section>
+  <div class="row">
+    <div class="span4"> 
+	  <section class="row center">
+	    <div class="span4">
+		  <h1><%= @user.name %></h1>
+		  <h3><%= @user.school_year %></h3>
+		</div>
+      </section><!--/section.row.center-->
+	  <section class="row center">
+	    <div class="span4">
+		  <h4><%= @user.high_school %></h4>
+		  <h4><%= @user.location %></h4>
+		</div>
+	  </section><!--/section.row.center-->
+	  <section class="row center">
+	    <div class="span4">
+			<h2>highlights</h2>
+		</div>
+	  </section><!--/section.row.center-->
+	  <section class="row center">
+	    <div class="span4">
+		  <p class="services-nav">
+		    <%= link_to youtube_icon, @user.youtube_link, target: '_blank' %>
+			<%= link_to flickr_icon, @user.flickr_link, target: '_blank' %>
+			<%= link_to facebook_icon, @user.fb_link, target: '_blank' %>
+		  </p>
+		</div>
+	  </section><!--/section.row.center-->
+	  <section class="row center">
+	    <div class="span4">
+		  <h2>Sports</h2>
+		</div>
+	  </section><!--/section.row.center-->
+    </div><!--/div.span4-->
+  </div><!--/div.row-->
+</section><!--/section.profile-block-->

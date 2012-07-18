@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe User do
   
-  before { @user = User.new(name: "Example User", 
+  before { @user = User.new(
                             school_year: "Junior", 
                             location: "Fallston, MD",
                             high_school: "Fallston High School", 
@@ -14,7 +14,6 @@ describe User do
 
   subject { @user }
 
-  it { should respond_to(:name) }
   it { should respond_to(:school_year) }
   it { should respond_to(:location) }
   it { should respond_to(:high_school) }

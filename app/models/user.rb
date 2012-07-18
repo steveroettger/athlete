@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :school_year, :location, :high_school, :goal, :fb_link, :flickr_link, 
+  extend FriendlyId
+  friendly_id :username
+  
+  attr_accessible :school_year, :location, :high_school, :goal, :fb_link, :flickr_link, 
                   :youtube_link
   
   validates :goal, length: { maximum: 150 }
@@ -23,8 +26,6 @@ class User < ActiveRecord::Base
     end
   end
   
-  def to_param
-		"#{id} #{username}".parameterize
-	end
   
+
 end

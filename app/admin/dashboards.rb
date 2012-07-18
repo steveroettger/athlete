@@ -14,6 +14,7 @@ ActiveAdmin::Dashboards.build do
     strong { link_to "View All Users", admin_users_path }  
   end
 
+  
   # Define your dashboard sections here. Each block will be
   # rendered on the dashboard in the context of the view. So just
   # return the content which you would like to display.
