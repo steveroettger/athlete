@@ -25,9 +25,9 @@
 										      placeholder: 'i.e. Fallston High School' %>
 					<%= f.input :goal, label: 'What is your goal this year?', as: 'text', 
 											                   input_html: { cols: 50, rows: 2 }  %>
-					<% if @user.background_image? %>
-						<%= image_tag @user.background_image_url(:thumb), class: 'background_image_thumb' %>
-					<% end %>						
+					<%# if @user.background_image? %>
+						<%#= image_tag @user.background_image_url(:thumb), class: 'background_image_thumb' %>
+					<%# end %>						
 					<%= f.input :background_image, as: :file, label: 'Profile Background' %>
 				    <%= f.submit "Save", class: "btn btn-large btn-primary" %>
 	      	    <% end %>
