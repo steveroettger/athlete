@@ -22,4 +22,10 @@ module ApplicationHelper
     image_tag('youtube.png', border: 0)
   end
   
+  def show_user_bg
+    if current_user != nil && current_user.background_image?
+      "background:transparent url(#{@user.background_image}) no-repeat fixed left top;"
+    end
+  end
+  
 end

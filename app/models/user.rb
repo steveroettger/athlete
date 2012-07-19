@@ -3,8 +3,9 @@ class User < ActiveRecord::Base
   friendly_id :username
   
   attr_accessible :school_year, :location, :high_school, :goal, :fb_link, :flickr_link, 
-                  :youtube_link
+                  :youtube_link, :background_image, :remote_image_url
   
+  mount_uploader :background_image, ImageUploader
   validates :goal, length: { maximum: 150 }
   
   def self.from_omniauth(auth)

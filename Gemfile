@@ -10,6 +10,8 @@ gem 'activeadmin'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.7'
 gem 'friendly_id'
+gem 'carrierwave'
+gem 'rmagick'
 
 
 # Gems used only for assets and not required
