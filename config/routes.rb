@@ -1,7 +1,4 @@
 Athlete::Application.routes.draw do
-  
-  resources :sports
-
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -23,7 +20,6 @@ Athlete::Application.routes.draw do
   
   devise_scope :admin_user do
     #Sports
-    resources :male_sports
-    resources :female_sports
+    resources :sports
   end
 end

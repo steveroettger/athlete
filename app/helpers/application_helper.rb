@@ -24,7 +24,8 @@ module ApplicationHelper
   
   def show_user_bg
     if current_user != nil && current_user.background_image?
-      "background:transparent url(#{@user.background_image}) no-repeat fixed left top;"
+      image = current_user.background_image_url(:full)
+      "background:transparent url(#{image}) fixed left top;"  
     end
   end
   

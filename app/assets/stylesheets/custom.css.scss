@@ -113,9 +113,7 @@ form.navbar-search {
 }
 
 ul.nav.pull-right li {
-	border-left: 1px solid $white;
 	&:hover { background-color: $blue; }
-	&:last-child { border-right: 1px solid $white; }
 }
 
 /*----------FOOTER----------*/

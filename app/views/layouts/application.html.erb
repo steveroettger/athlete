@@ -12,10 +12,10 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 </head>
-<body style="<%= show_user_bg %>">
 <% if params[:controller] == "users" %>
+<body style="<%= show_user_bg %>">
   <%= render 'layouts/main_user' %>
-<% else %>
+<% else %>  
   <%= render 'layouts/main_public' %>
 <% end %> 
 </body>

@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  #before_filter :authenticate_admin_user!, only: [:index]
   before_filter :correct_user, only: [:edit, :update]
   before_filter :signed_in_user, only: [:index, :show]
   
