@@ -47,6 +47,8 @@ header.goal {
 
   h1 {
 	padding:0.3em 0 0.3em 0;
+	color: $white;
+	text-shadow:5px 5px 5px #000000;
   }
 }
 
@@ -73,6 +75,8 @@ section.profile-block {
 	
 	h1 {
 		font-size: 2.5em;
+		color: $blue;
+		text-shadow:5px 5px 5px #000000;
 	}
 	
 	h2 {
@@ -94,6 +98,7 @@ section.profile-block {
 	
 	label {
 		color: $blue;
+		text-shadow:5px 5px 5px #000000;
 	}
 	
 	.services-nav a {
