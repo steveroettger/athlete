@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120718202548) do
+ActiveRecord::Schema.define(:version => 20120806163623) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -71,6 +71,9 @@ ActiveRecord::Schema.define(:version => 20120718202548) do
     t.string   "flickr_link"
     t.string   "youtube_link"
     t.string   "goal"
+    t.string   "highlight_one"
+    t.string   "highlight_two"
+    t.string   "highlight_three"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.datetime "created_at",       :null => false

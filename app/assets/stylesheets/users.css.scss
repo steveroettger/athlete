@@ -75,17 +75,26 @@ section.profile-block {
 	
 	h1 {
 		font-size: 2.5em;
-		color: $blue;
+		color: $white;
 		text-shadow:5px 5px 5px #000000;
 	}
 	
 	h2 {
 		text-transform: uppercase;
 		font-size: 1.75em;
+		color: $white;
+		text-shadow:5px 5px 5px #000000;
 	}
 	
 	h3, h4 {
 		font-size: 1.5em;
+		color: $grayLighter;
+		text-shadow:5px 5px 5px #000000;
+	}
+	
+	P { 
+		color: $white; 
+		text-shadow:5px 5px 5px #000000;
 	}
 	
 	section.row.center {
@@ -97,7 +106,8 @@ section.profile-block {
 	}
 	
 	label {
-		color: $blue;
+		color: $white;
+		font-weight: bold;
 		text-shadow:5px 5px 5px #000000;
 	}
 	
@@ -111,6 +121,18 @@ section.profile-block {
 		-webkit-border-radius: 2px;
 		-moz-border-radius: 2px;
 		border-radius: 2px;
+	}
+	
+	.nav.nav-tabs li a, .nav.nav-tabs li a:visited {
+		color: $white;
+		font-weight: bold;
+		text-shadow:5px 5px 5px #000000;
+		&:hover { color: $blue; text-shadow: none; }
+	} 
+	
+	.nav.nav-tabs li.active a {
+		color: $blue;
+		text-shadow: none;
 	}
 }
 
