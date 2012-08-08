@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
   friendly_id :username
   
   attr_accessible :school_year, :location, :high_school, :goal, :fb_link, :flickr_link, 
-                  :youtube_link, :background_image, :remote_image_url
+                  :youtube_link, :background_image, :remote_image_url, :highlight_one, 
+                  :highlight_two, :highlight_three
   
   mount_uploader :background_image, ImageUploader
   validates :goal, length: { maximum: 150 }
