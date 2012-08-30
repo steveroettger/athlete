@@ -6,12 +6,17 @@ class UsersController < ApplicationController
     @users = User.paginate(page: params[:page])
   end
   
+  def dashboard
+    @user = User.find(params[:id])
+  end
+  
   def show
     @user = User.find(params[:id])
   end
   
   def edit
     @user = User.find(params[:id])
+    render 'dashboard'
   end
   
   def update

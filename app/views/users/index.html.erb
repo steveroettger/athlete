@@ -1,7 +1,6 @@
-<% provide(:title, 'All users') %>
-<section id="user-index">
-  <h1>All users</h1>
-
+<% provide(:title, 'Find Teammates &amp; Friends') %>
+<section class="container container-white">
+  <h1>Find Teammates &amp; Friends</h1>
   <%= will_paginate %>
   <ul class="users">
     <% @users.each do |user| %>
@@ -12,4 +11,5 @@
     <% end %>
   </ul>
   <%= will_paginate %>
+</section>
 

@@ -17,6 +17,7 @@ Athlete::Application.routes.draw do
   
   #Users
   resources :users
+  match '/users/:id/dashboard', to: "users#dashboard"
   
   devise_scope :admin_user do
     #Sports
