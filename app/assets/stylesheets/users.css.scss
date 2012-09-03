@@ -4,35 +4,48 @@
 }
 
 /*-----------USERS INDEX SECTION----------*/
-.users {
-  list-style: none;
-  margin: 0;
-  
-  li {
-    overflow: auto;
-    padding: 10px 30px;
-    border-top: 1px solid $black;
-    &:first-child { margin-top: 30px; } 
-	&:last-child {
-      border-bottom: 1px solid $black;
-    }
-
-	img {
-	  margin-right: 0.40em;
-	  -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
-	  border-radius: 3px;
-	  -moz-box-shadow: 3px 4px 5px #000000;
-	  -webkit-box-shadow: 3px 4px 5px #000000;
-	  box-shadow: 3px 4px 5px #000000;	
+.index-white {
+	margin-top: -40px;
+	background: $white;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
+	h1 { 
+		color: $gray; 
+		padding-top: 20px;
 	}
 	
-	a, a:visited {
-	  font-size: 120%;
-	  color: $blue;
-	  &:hover { text-decoration: none; }
+	.users {
+  		list-style: none;
+  		margin: 0;
+		padding-bottom: 30px;
+  
+  		li {
+    		overflow: auto;
+    		padding: 10px 30px;
+    		border-top: 2px solid $gray;
+    		&:first-child { margin-top: 20px; } 
+			&:last-child { border-bottom: 2px solid $gray; }
+
+			img {
+	  			margin-right: 0.40em;
+	  			-webkit-border-radius: 3px;
+      			-moz-border-radius: 3px;
+	  			border-radius: 3px;
+	  			-moz-box-shadow: 3px 4px 5px #000000;
+	  			-webkit-box-shadow: 3px 4px 5px #000000;
+	  			box-shadow: 3px 4px 5px #000000;	
+			}
+	
+			a, a:visited {
+	  			font-size: 120%;
+				font-weight: bold;
+	  			color: $blue;
+	  			&:hover { text-decoration: underline; }
+			}
+  		}
 	}
-  }
 }
 
 /*----------USERS DASHBOARD SECTION----------*/
@@ -69,14 +82,17 @@
 			font-weight: bold;
 		}
 		
-		input, textarea {
+		input.string, textarea {
 			width: 50%;
+			font-style: italic;
 		}
 
 		label {
 			color: $gray;
 			font-weight: bold;
 		}
+		
+		.u { text-decoration: underline; }
 	}
 	
 	
@@ -131,6 +147,12 @@ section.profile-block {
 	h3, h4 {
 		font-size: 1.5em;
 		color: $grayLighter;
+		text-shadow:5px 5px 5px #000000;
+	}
+	
+	P { 
+		color: $white; 
+		font-weight: bold;
 		text-shadow:5px 5px 5px #000000;
 	}
 	

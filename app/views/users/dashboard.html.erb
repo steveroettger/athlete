@@ -3,58 +3,30 @@
   <div class="tabbable dashboard-tabs">
 	<h1>Welcome <%= @user.first_name + "!" %></h1>
 	<ul class="nav nav-tabs">
-		<li class="active"><a href="#tab1" data-toggle="tab">My Profile</a></li>
-		<li><a href="#tab2" data-toggle="tab">My Sports</a></li>
-		<li><a href="#tab3" data-toggle="tab">My Highlights</a></li>
-		<li><a href="#tab4" data-toggle="tab">My Media Channels</a></li>
-		<li><a href="#tab5" data-toggle="tab">My Fans</a></li>
+		<li class="active"><a href="#tab1" data-toggle="tab"><span class="u">Step 1:</span> My Profile</a></li>
+		<li><a href="#tab2" data-toggle="tab"><span class="u">Step 2:</span> My Sports</a></li>
+		<li><a href="#tab3" data-toggle="tab"><span class="u">Step 3:</span> My Highlights</a></li>
+		<li><a href="#tab4" data-toggle="tab"><span class="u">Step 4:</span> My Media Channels</a></li>
+		<li><a href="#tab5" data-toggle="tab"><span class="u">Step 5:</span> Fan Section</a></li>
 	</ul><!--/ul.nav.nav-tabs-->
 	<div class="tab-content">
 	  <div class="tab-pane active" id="tab1">
-		<p>Enter main profile information below:</p>
-		<%= simple_form_for @user, :html => { multipart: true, class: 'form-vertical' } do |f| %>
-			<%= f.input :school_year, label: 'What year of school are you in?', placeholder: 'i.e. Junior' %>
-			<%= f.input :location, label: 'What city/town do you call home?', placeholder: 'i.e. Wilmington, DE' %>
-			<%= f.input :high_school, label: 'What is the name of your High School?', 
-						placeholder: 'i.e. Fallston High School' %>
-			<%= f.input :goal, label: 'What is your goal this year?', as: 'text', 
-						input_html: { cols: 50, rows: 2 }  %>
-			<% if @user.background_image? %>
-				<%= image_tag @user.background_image_url(:thumb), class: 'background_image_thumb' %>
-			<% end %>						
-			<%= f.input :background_image, as: :file, label: 'Profile Background', class: "white" %>
-			<%= f.submit "Save", class: "btn btn-large btn-primary" %>
-    	<% end %>
-	  </div>
+		<%= render 'users/profile' %>
+	  </div><!--PROFILE/div.tab-pane-->
 	  <div class="tab-pane" id="tab2">
 		<p>dropdown to choose a sport</p>
 		<p>input field for position</p>
 		<p>input field for coach</p>
-	  </div><!--/div.tab-pane-->
+	  </div><!--/SPORTSdiv.tab-pane-->
 	  <div class="tab-pane" id="tab3">
-		<p>Add up to three highlights that you would like to display on your profile page.</p>
-		<%= simple_form_for @user, :html => { class: 'form-vertical' } do |f| %>
-			<%= f.input :highlight_one, label: '#1', placeholder: "i.e. individual statistics" %>
-			<%= f.input :highlight_two, label: '#2', placeholder: "i.e. individual awards" %>
-			<%= f.input :highlight_three, label: '#3', placeholder: "i.e. team awards" %>
-			<%= f.submit "Save", class: "btn btn-large btn-primary" %>
-		<% end %>
-	  </div><!--/div.tab-pane-->
+		<%= render 'users/highlights' %>
+	  </div><!--HIGHLIGHTS/div.tab-pane-->
 	  <div class="tab-pane" id="tab4">
-		<p>Enter your Facebook, Flickr and/or Youtube links below:</p>
-		<%= simple_form_for @user, :html => { class: 'form-vertical' } do |f| %>
-			<%= f.input :fb_link, label: 'Facebook', 
-					    placeholder: 'http://www.facebook.com/USERNAME' %>
-			<%= f.input :flickr_link, label: 'Flickr',
-			 			placeholder: 'http://www.flickr.com/USERNAME'%>
-			<%= f.input :youtube_link, label: 'Youtube', 
-						placeholder: 'http://www.youtube.com/USERNAME' %>
-			<%= f.submit "Save", class: "btn btn-large btn-primary" %>
-		<% end %>
-	  </div><!--/div.tab-pane-->
+		<%= render 'users/media' %>
+	  </div><!--MEDIA/div.tab-pane-->
 	  <div class="tab-pane" id="tab5">
-		test
-	  </div><!--/div.tab-pane-->
+		<%= render 'users/fans' %>
+	  </div><!--FANS/div.tab-pane-->
 	</div>
   </div>
 </section>

@@ -1,0 +1,7 @@
+<p>Add up to three highlights that you would like to display on your profile page.</p>
+<%= simple_form_for @user, :html => { class: 'form-vertical' } do |f| %>
+	<%= f.input :highlight_one, label: '#1', placeholder: "i.e. individual statistics" %>
+	<%= f.input :highlight_two, label: '#2', placeholder: "i.e. individual awards" %>
+	<%= f.input :highlight_three, label: '#3', placeholder: "i.e. team awards" %>
+	<%= f.submit "Save", class: "btn btn-large btn-primary" %>
+<% end %>

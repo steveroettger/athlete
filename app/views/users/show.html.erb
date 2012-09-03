@@ -1,5 +1,9 @@
 <% provide(:title, @user.name) %>
 <header class="goal">
+	<div class="pull-left">
+		<%# render 'users/follow_form'  %>
+		<%= render 'follow_form' if signed_in? %>
+	</div>
 	<h1><%= @user.goal %></h1>
 </header>
 

@@ -1,0 +1,14 @@
+<p>Enter main profile information below:</p>
+<%= simple_form_for @user, :html => { multipart: true, class: 'form-vertical' } do |f| %>
+	<%= f.input :school_year, label: 'What year of school are you in?', placeholder: 'i.e. Junior' %>
+	<%= f.input :location, label: 'What city/town do you call home?', placeholder: 'i.e. Wilmington, DE' %>
+	<%= f.input :high_school, label: 'What is the name of your High School?', 
+				placeholder: 'i.e. Fallston High School' %>
+	<%= f.input :goal, label: 'What is your goal this year?', as: 'text', 
+				input_html: { cols: 50, rows: 2 }  %>
+	<% if @user.background_image? %>
+		<%= image_tag @user.background_image_url(:thumb), class: 'background_image_thumb' %>
+	<% end %>						
+	<%= f.input :background_image, as: :file, label: 'Profile Background', class: "white" %>
+	<%= f.submit "Save", class: "btn btn-large btn-primary" %>
+<% end %>

@@ -1,8 +1,14 @@
 Athlete::Application.routes.draw do
+
+  #ACTIVE ADMIN ROUTES
   ActiveAdmin.routes(self)
-
   devise_for :admin_users, ActiveAdmin::Devise.config
-
+  devise_scope :admin_user do
+    #Sports
+    resources :sports
+  end
+  
+  #PUBLIC SITE PAGES
   root to: 'pages#home'
   match '/about',   to: 'pages#about'
   match '/faq',     to: 'pages#faq'
@@ -15,12 +21,14 @@ Athlete::Application.routes.draw do
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
   
-  #Users
-  resources :users
+  #USERS LOGIC
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   match '/users/:id/dashboard', to: "users#dashboard"
   
-  devise_scope :admin_user do
-    #Sports
-    resources :sports
-  end
+  #FAN FUNCTION ROUTES
+  resources :fans, only: [:create, :destroy]  
 end

@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
   before_filter :correct_user, only: [:edit, :update]
-  before_filter :signed_in_user, only: [:index, :show]
+  before_filter :signed_in_user, only: [:index, :show, :following, :followers]
   
   def index
     @users = User.paginate(page: params[:page])
+    @user = current_user
   end
   
   def dashboard
@@ -22,24 +23,23 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-      redirect_to @user, notice: 'Your account has been successfully updated.'
+      redirect_to edit_user_path(current_user), notice: 'Your account has been successfully updated.'
     else
       render 'edit'
     end
   end
   
-  private
+  def following
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.followed_users.paginate(page: params[:page])
+    render 'show_follow'
+  end
   
-    def correct_user
-      @user = User.find(params[:id])
-      if @user != current_user
-        redirect_to root_path, notice: 'Please sign in.'
-      end  
-    end
-    
-    def signed_in_user
-      if @user == current_user
-        redirect_to root_path, notice: "If you do not have an account, please sign up. Otherwise please sign in."
-      end
-    end
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
+  end
 end

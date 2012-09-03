@@ -1,15 +1,18 @@
 <% provide(:title, 'Find Teammates &amp; Friends') %>
-<section class="container container-white">
-  <h1>Find Teammates &amp; Friends</h1>
-  <%= will_paginate %>
-  <ul class="users">
-    <% @users.each do |user| %>
-      <li>
-        <%= link_to image_tag(user.profile_image), user %>
-        <%= link_to user.name, user %>
-      </li>
-    <% end %>
-  </ul>
-  <%= will_paginate %>
+<section class="hero-unit hero-unit-gray">
+  <div class="index-white">  
+	<h1>Find Teammates &amp; Friends</h1>
+  	<%= will_paginate %>
+  	<ul class="users">
+      <% @users.each do |user| %>
+        <li>
+          <%= link_to image_tag(user.profile_image), user %>
+          <%= link_to user.name, user %>
+		  <%# render 'follow_form' if signed_in? %>
+        </li>
+      <% end %>
+  	</ul>
+  	<%= will_paginate %>
+  </div>
 </section>
 
