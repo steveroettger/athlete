@@ -8,12 +8,23 @@ class User < ActiveRecord::Base
                                    dependent:   :destroy
   has_many :followers, through: :reverse_fans, source: :follower
   
+  #ALLOWS THE USER MODEL TO BE SEARCHABLE THROUGH TIRE + ELASTICSEARCH
+  include Tire::Model::Search
+  include Tire::Model::Callbacks
+  
+  def self.search(params)
+    tire.search(load: true, page: params[:page], per_page: 25) do
+      query { string params [:query], default_operator: "AND" } if params[:query].present?
+      sort { by :last_name, "desc" }
+    end
+  end
+  
   #CREATES THE UNIQUE SLUG FOR EACH USER
   extend FriendlyId
   friendly_id :username
   
   #DEFINES WHAT IS ACCESSIBLE TO EDIT ON USER SIDE
-  attr_accessible :school_year, :location, :high_school, :goal, :fb_link, :flickr_link, 
+  attr_accessible :school_year, :location, :high_school, :goal, :fb_link, :instagram_link, 
                   :youtube_link, :background_image, :remote_image_url, :highlight_one, 
                   :highlight_two, :highlight_three
   

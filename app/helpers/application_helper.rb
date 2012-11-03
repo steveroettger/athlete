@@ -14,8 +14,8 @@ module ApplicationHelper
     image_tag('facebook.png', border: 0)
   end
   
-  def flickr_icon
-    image_tag('flickr.png', border: 0)
+  def instagram_icon
+    image_tag('instagram.png', border: 0)
   end
   
   def youtube_icon

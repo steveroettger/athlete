@@ -3,8 +3,9 @@ class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:index, :show, :following, :followers]
   
   def index
-    @users = User.paginate(page: params[:page])
-    @user = current_user
+      @user = current_user
+      #@users = User.paginate(page: params[:page])
+      @users = User.search(params)
   end
   
   def dashboard

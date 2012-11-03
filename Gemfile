@@ -13,6 +13,9 @@ gem 'friendly_id'
 gem 'carrierwave'
 gem 'rmagick'
 
+# SEARCH ARCHITECTURE = TIRE + ELASTIC SEARCH
+gem 'tire'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

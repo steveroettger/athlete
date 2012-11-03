@@ -8,7 +8,7 @@ describe User do
                             high_school: "Fallston High School", 
                             goal: "To be awesome", 
                             fb_link: "http://facebook.com", 
-                            flickr_link: "http://flickr.com",
+                            instagram_link: "http://instagram.com",
                             youtube_link: "http://youtube.com"
                             ) }
 
@@ -19,7 +19,7 @@ describe User do
   it { should respond_to(:high_school) }
   it { should respond_to(:goal) }
   it { should respond_to(:fb_link) }
-  it { should respond_to(:flickr_link) }
+  it { should respond_to(:instagram_link) }
   it { should respond_to(:youtube_link) }
   
   describe "when goal statement is too long" do

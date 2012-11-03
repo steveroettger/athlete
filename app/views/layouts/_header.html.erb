@@ -8,12 +8,21 @@
 	 <% end %>
 	 <% if current_user %>
 	  <nav>
+		<!--
 		<form class="navbar-search">
 		  <div class="input-prepend">
 			<span class="add-on"><i class="icon-search icon-white"></i></span>
 		    <input type="text" class="search-query" placeholder="find teammates">
 		  </div>
 		</form>
+		-->
+		<%= form_tag users_path, method: :get, class: "navbar-search" do %>
+		    <div class="input-prepend">
+			<span class="add-on"><i class="icon-search icon-white"></i></span>
+			<%= text_field_tag :query, params[:query], class: "search-query", placeholder: "find teammates" %>
+		    <%= submit_tag "Search", name: nil, class: "btn-primary" %>
+			</div>
+		<% end %>
 	    <ul class="nav pull-right">
 		
 		  <div class="btn-group">
