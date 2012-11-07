@@ -16,6 +16,8 @@ gem 'rmagick'
 # SEARCH ARCHITECTURE = TIRE + ELASTIC SEARCH
 gem 'tire'
 
+# FAKER GEM FOR CREATING FAKE USERS IN DEVELOPMENT
+gem 'faker'
 
 # Gems used only for assets and not required
 # in production environments by default.

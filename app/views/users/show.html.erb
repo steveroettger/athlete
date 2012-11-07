@@ -1,11 +1,10 @@
 <% provide(:title, @user.name) %>
 <header class="goal">
-	<div class="pull-left">
-		<%# render 'users/follow_form'  %>
+	<div class="follow-form-btn pull-left">
 		<%= render 'follow_form' if signed_in? %>
 	</div>
 	<h1><%= @user.goal %></h1>
-</header>
+</header><!--/header.goal-->
 
 <section class="profile-block">
   <div class="row">
@@ -33,9 +32,9 @@
 	  <section class="row center">
 	    <div class="span4">
 		  <p class="services-nav">
-		    <%= link_to youtube_icon, @user.youtube_link, target: '_blank' %>
+		    <%= link_to facebook_icon, @user.fb_link, target: '_blank' %>
 			<%= link_to instagram_icon, @user.instagram_link, target: '_blank' %>
-			<%= link_to facebook_icon, @user.fb_link, target: '_blank' %>
+			<%= link_to youtube_icon, @user.youtube_link, target: '_blank' %>			
 		  </p>
 		</div>
 	  </section><!--/section.row.center-->

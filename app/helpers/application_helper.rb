@@ -22,6 +22,10 @@ module ApplicationHelper
     image_tag('youtube.png', border: 0)
   end
   
+  def default_avatar
+    image_tag('avatar.gif', border: 0)
+  end
+  
   def show_user_bg
     if current_user != nil && current_user.background_image?
       image = @user.background_image_url(:full)

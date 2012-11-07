@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120903141456) do
+ActiveRecord::Schema.define(:version => 20121103150337) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(:version => 20120903141456) do
     t.binary   "profile_image"
     t.string   "background_image"
     t.string   "fb_link"
-    t.string   "flickr_link"
+    t.string   "instagram_link"
     t.string   "youtube_link"
     t.string   "goal"
     t.string   "highlight_one"

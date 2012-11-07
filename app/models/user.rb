@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   include Tire::Model::Callbacks
   
   def self.search(params)
-    tire.search(load: true, page: params[:page], per_page: 25) do
+    tire.search(load: true, page: params[:page], per_page: 10) do
       query { string params [:query], default_operator: "AND" } if params[:query].present?
       sort { by :last_name, "desc" }
     end
@@ -24,7 +24,8 @@ class User < ActiveRecord::Base
   friendly_id :username
   
   #DEFINES WHAT IS ACCESSIBLE TO EDIT ON USER SIDE
-  attr_accessible :school_year, :location, :high_school, :goal, :fb_link, :instagram_link, 
+  attr_accessible :name, :email,
+                  :school_year, :location, :high_school, :goal, :fb_link, :instagram_link, 
                   :youtube_link, :background_image, :remote_image_url, :highlight_one, 
                   :highlight_two, :highlight_three
   

@@ -23,11 +23,6 @@ $grayMedium: #777;
 $grayLighter: #999; 
 
 /*----------UNIVERSAL---------*/
-
-html {
-  overflow-y: scroll;
-}
-
 body {
   padding-top: 60px;
 }
@@ -84,7 +79,7 @@ p {
 
 /*----------HEADER----------*/
 .navbar-inner {
-	background: $black;
+	background: url(/assets/black-Linen.png) repeat;
 }
 
 #logo {
@@ -106,9 +101,9 @@ form.navbar-search {
 	padding-left: 20px;
 	
 	.add-on {
-		margin-right: -5px;
+		margin:1px -5px 0 0;
 		background: $grayDark;
-		border-color: $black;
+		border:1px solid $black;
 	}
 }
 
