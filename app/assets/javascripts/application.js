@@ -15,3 +15,38 @@
 //= require twitter/bootstrap
 //= require_tree .
 
+  $(document).ready(function() {
+	$( "#position-profile" ).draggable({
+		cursor: 'move',
+		containment: "parent",
+		scroll: false, 
+		// Capture the "stop drag" event.
+		stop:function(event, ui) {
+			// Generate the profile object with the updated position coordinates.
+			var profile = {
+				"id": $(this).attr('value'),
+				"position_y": $(this).position().top.toString(),
+				"position_x": $(this).position().left.toString()
+			};
+			
+			// Send the request to the server.
+			$.ajax({
+				type: "PUT",
+				url: "/users/" + $(this).attr('value') + "#position-profile" + ".json",
+				data: JSON.stringify( profile ),
+				contentType: 'application/JSON',
+				dataType: 'json',
+				
+				// Create a success message to let users know new positions have saved
+				//success: function(msg){
+				//         alert( "Data Saved:");
+				//}
+				// In case that an error happens, capture it and show the details.
+				error: function(xhr, msg, error) {
+					alert(msg + ": " + error);
+				}
+			})
+		}
+	});
+  });
+

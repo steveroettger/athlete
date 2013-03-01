@@ -10,23 +10,31 @@ class UsersController < ApplicationController
   
   def dashboard
     @user = User.find(params[:id])
+    @sports = Sport.all
   end
   
   def show
     @user = User.find(params[:id])
+    @user_sports = @user.sports
   end
   
   def edit
     @user = User.find(params[:id])
+    @sports = Sport.all
     render 'dashboard'
   end
   
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(params[:user])
-      redirect_to edit_user_path(current_user), notice: 'Your account has been successfully updated.'
-    else
-      render 'edit'
+    
+    respond_to do |format|
+      if @user.update_attributes(params[:user])
+        format.html { redirect_to edit_user_path(current_user), notice: 'Your account has been successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
     end
   end
   
@@ -34,7 +42,7 @@ class UsersController < ApplicationController
     @title = "Following"
     @user = User.find(params[:id])
     @users = @user.followed_users.paginate(page: params[:page])
-    render 'show_follow'
+    render 'show_fans'
   end
   
   def followers

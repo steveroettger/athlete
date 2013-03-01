@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   #RELATIONSHIPS
-  has_many :sports
+  has_and_belongs_to_many :sports
   has_many :fans, foreign_key: "follower_id", dependent: :destroy
   has_many :followed_users, through: :fans, source: :followed
   has_many :reverse_fans, foreign_key: "followed_id",
@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email,
                   :school_year, :location, :high_school, :goal, :fb_link, :instagram_link, 
                   :youtube_link, :background_image, :remote_image_url, :highlight_one, 
-                  :highlight_two, :highlight_three
+                  :highlight_two, :highlight_three, :position_x, :position_y, :sport_ids
   
   #CARRIERWAVE IMAGE UPLOADER FOR USER BACKGROUND
   mount_uploader :background_image, ImageUploader

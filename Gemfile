@@ -12,6 +12,7 @@ gem 'bootstrap-will_paginate', '0.0.7'
 gem 'friendly_id'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'jquery-rails'
 
 # SEARCH ARCHITECTURE = TIRE + ELASTIC SEARCH
 gem 'tire'
@@ -30,23 +31,6 @@ group :assets do
   gem "bootstrap-sass", "~> 2.0.3.1"
   gem 'twitter-bootstrap-rails'
 end
-
-gem 'jquery-rails'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
 
 # Facebook Authentication
   gem 'omniauth-facebook'

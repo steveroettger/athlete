@@ -12,7 +12,7 @@ ActiveAdmin.register User do
     column :location
     column :high_school
     column :fb_link
-    column :flickr_link
+    column :instagram_link
     column :youtube_link
     default_actions
   end
@@ -33,7 +33,7 @@ ActiveAdmin.register User do
       row :high_school
       row :profile_image
       row :fb_link
-      row :flickr_link
+      row :instagram_link
       row :youtube_link
       row :goal
       row :oauth_token

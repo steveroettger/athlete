@@ -1,15 +1,17 @@
-<% @user ||= current_user %>
-<div class="stats">
-  <a href="<%= following_user_path(@user) %>">
-    <strong id="following" class="stat">
-      <%= @user.followed_users.count %>
-    </strong>
-    following
-  </a>
-  <a href="<%= followers_user_path(@user) %>">
-    <strong id="followers" class="stat">
-      <%= @user.followers.count %>
-    </strong>
-    followers
-  </a>
-</div>
+<%= will_paginate @users %>
+	<ul class="users">
+		<% @users.each do |user| %>
+	    <li>
+	    	<% if user.profile_image? %>
+			  <%= link_to image_tag(user.profile_image), user %>
+			<% else %>	
+			  <%= link_to default_avatar, user %>
+			<% end %>
+	        <%= link_to user.name, user %>
+			<%= render 'follow_form' if signed_in? %>
+	    </li>
+	    <% end %>
+	</ul>
+<%= will_paginate @users %>
+
+	

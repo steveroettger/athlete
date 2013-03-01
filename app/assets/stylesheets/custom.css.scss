@@ -106,10 +106,8 @@ form.navbar-search {
 		border:1px solid $black;
 	}
 }
-
-ul.nav.pull-right li {
-	&:hover { background-color: $blue; }
-}
+ul.dropdown-menu li a, ul.dropdown-menu li a:visited { color: $black; } 
+ul.nav.pull-right li { &:hover { background-color: $blue; } }
 
 /*----------FOOTER----------*/
 footer {

@@ -2,21 +2,29 @@
 <section class="hero-unit hero-unit-gray">
   <div class="tabbable dashboard-tabs">
 	<h1>Welcome <%= @user.first_name + "!" %></h1>
+	<% flash.each do |name, msg| %>
+		<div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+			<a class="close" data-dismiss="alert">×</a><!--/.close-->
+			<%= msg %>
+		</div><!--/.alert.alert-'name'--> 
+	<% end %>
 	<ul class="nav nav-tabs">
 		<li class="active"><a href="#tab1" data-toggle="tab"><span class="u">Step 1:</span> My Profile</a></li>
 		<li><a href="#tab2" data-toggle="tab"><span class="u">Step 2:</span> My Sports</a></li>
 		<li><a href="#tab3" data-toggle="tab"><span class="u">Step 3:</span> My Highlights</a></li>
-		<li><a href="#tab4" data-toggle="tab"><span class="u">Step 4:</span> My Media Channels</a></li>
-		<li><a href="#tab5" data-toggle="tab"><span class="u">Step 5:</span> Fan Section</a></li>
+		<li><a href="#tab4" data-toggle="tab"><span class="u">Step 4:</span> My Media Center</a></li>
+		<li><a href="#tab5" data-toggle="tab"><span class="u">Step 5:</span> Share Profile</a></li>
 	</ul><!--/ul.nav.nav-tabs-->
 	<div class="tab-content">
 	  <div class="tab-pane active" id="tab1">
 		<%= render 'users/profile' %>
 	  </div><!--PROFILE/div.tab-pane-->
 	  <div class="tab-pane" id="tab2">
-		<p>dropdown to choose a sport</p>
-		<p>input field for position</p>
-		<p>input field for coach</p>
+		<p>Select your sports below:</p>
+		<%= simple_form_for @user, :html => { class: 'form-vertical' } do |f| %>
+			<%= f.association :sports, :collection => Sport.all(:order => 'title ASC'), as: :check_boxes, label: false %>
+			<%= f.submit "Save", class: "btn btn-large btn-primary" %>
+		<% end %>
 	  </div><!--/SPORTSdiv.tab-pane-->
 	  <div class="tab-pane" id="tab3">
 		<%= render 'users/highlights' %>
@@ -25,7 +33,9 @@
 		<%= render 'users/media' %>
 	  </div><!--MEDIA/div.tab-pane-->
 	  <div class="tab-pane" id="tab5">
-		<%= render 'users/fans' %>
+		<p>email share</p>
+		<p>facebook post share</p>
+		<p>print pdf</p>
 	  </div><!--FANS/div.tab-pane-->
 	</div>
   </div>

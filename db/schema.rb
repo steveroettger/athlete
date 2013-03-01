@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121103150337) do
+ActiveRecord::Schema.define(:version => 20121213214215) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -57,9 +57,30 @@ ActiveRecord::Schema.define(:version => 20121103150337) do
   add_index "fans", ["follower_id", "followed_id"], :name => "index_fans_on_follower_id_and_followed_id", :unique => true
   add_index "fans", ["follower_id"], :name => "index_fans_on_follower_id"
 
-  create_table "sports", :force => true do |t|
+  create_table "female_sports", :force => true do |t|
     t.string   "title"
     t.string   "image_url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "male_sports", :force => true do |t|
+    t.string   "title"
+    t.string   "image_url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "sports", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "image_url"
+  end
+
+  create_table "sports_users", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "sport_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -68,27 +89,29 @@ ActiveRecord::Schema.define(:version => 20121103150337) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "first_name"
     t.string   "last_name"
     t.string   "username"
     t.string   "email"
     t.string   "gender"
-    t.string   "school_year"
     t.string   "location"
     t.string   "high_school"
     t.binary   "profile_image"
-    t.string   "background_image"
     t.string   "fb_link"
-    t.string   "instagram_link"
     t.string   "youtube_link"
     t.string   "goal"
+    t.string   "school_year"
+    t.string   "background_image"
     t.string   "highlight_one"
     t.string   "highlight_two"
     t.string   "highlight_three"
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.string   "instagram_link"
+    t.string   "position_x"
+    t.string   "position_y"
   end
 
 end

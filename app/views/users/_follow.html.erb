@@ -1,4 +1,4 @@
 <%= form_for(current_user.fans.build(followed_id: @user.id), remote: true) do |f| %>
   <div><%= f.hidden_field :followed_id %></div>
-  <%= f.submit "Fan", class: "btn btn-large btn-primary" %>
+  <%= f.submit "Fan", class: "btn btn-primary" %>
 <% end %>

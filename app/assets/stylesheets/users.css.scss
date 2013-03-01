@@ -1,7 +1,20 @@
-.user-wrapper {
-	position: absolute;
-	top: 40px;
-	width: 100%;
+/*----------USERS PROFILE MODAL----------*/
+div.modal {
+	width: 450px;
+	
+	div.modal-header {
+		background: $black;
+	
+		h3#modal-label { 
+			text-align: center; 
+			color: $blue; 
+		}
+	
+		button.close {
+			margin-top:-2px;
+			color: $white;
+		}
+	}
 }
 
 /*-----------USERS INDEX SECTION----------*/
@@ -14,8 +27,10 @@
 	border-radius: 5px;
 	
 	h1 { 
+		padding-top: 15px;
+		font-family: 'ChunkFive';
+		font-size: 2.8em;
 		color: $gray; 
-		padding-top: 20px;
 	}
 	
 	div.pagination {
@@ -56,7 +71,7 @@
 
 /*----------USERS DASHBOARD SECTION----------*/
 .hero-unit.hero-unit-gray {
-	margin:0 9em 0 9em;
+	margin:-30px 9em 0 9em;
 	background-color: rgba(#464646, 0.55);
 	
 	div.tabbable.dashboard-tabs {
@@ -66,7 +81,12 @@
 		-moz-border-radius: 5px;
 		border-radius: 5px;
 		
-		h1 { color: $gray; }
+		h1 { 
+			padding-top:15px; 
+			font-family: "ChunkFive";
+			font-size: 2.8em; 
+			color: $gray; 
+		}
 		
 		.nav.nav-tabs li a, .nav.nav-tabs li a:visited {
 			color: $gray;
@@ -100,8 +120,6 @@
 		.u { text-decoration: underline; }
 	}
 	
-	
-	
 	div.tab-content {
 		margin-left: 30px;
 	}
@@ -109,31 +127,39 @@
 
 
 /*-----------USERS PROFILE SECTION----------*/
-header.goal {
-  height: 65px;
+section.goal-container {
+  position: fixed;
+  top: 40px;
   width: 100%;
-  background-color: rgba(#464646, 0.55);
-  -webkit-border-bottom-right-radius: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  -moz-border-radius-bottomright: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  text-align: center;
 
-  .follow-form-btn {
-	 margin:15px 0 0 15px; 
-  }	
+  header.goal {	
+    width: 100%;
+	height: 65px;
+  	background-color: rgba(#464646, 0.55);
+  	-webkit-border-bottom-right-radius: 3px;
+  	-webkit-border-bottom-left-radius: 3px;
+  	-moz-border-radius-bottomright: 3px;
+  	-moz-border-radius-bottomleft: 3px;
+  	border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
 
-  h1 {
-	padding:0.3em 0 0.3em 0;
-	color: $white;
-	text-shadow:5px 5px 5px #000000;
+    .follow-form-btn {
+	  margin:15px 0 0 15px; 
+  	}	
+
+  	h1 {
+	 padding:0.3em 0 0.3em 0;
+	 color: $white;
+	 text-shadow:5px 5px 5px #000000;
+    }
   }
 }
 
+#position-profile { cursor: move; }
+
 section.profile-block {
-	margin-top: 60px;
-	float:right;
+	width: 400px;
 	padding: 1.3em;
 	background-color: rgba(#464646, 0.55);
 	-webkit-border-radius: 5px;
@@ -141,6 +167,7 @@ section.profile-block {
 	border-radius: 5px;
 	
 	h1 {
+		margin:0;
 		font-size: 2.5em;
 		color: $white;
 		text-shadow:5px 5px 5px #000000;
@@ -154,7 +181,7 @@ section.profile-block {
 		text-shadow:5px 5px 5px #000000;
 	}
 	
-	h3, h4 {
+	h3 {
 		font-size: 1.5em;
 		color: $white;
 		text-shadow:5px 5px 5px #000000;
@@ -167,11 +194,24 @@ section.profile-block {
 		text-shadow:5px 5px 5px #000000;
 	}
 	
-	p.last {margin-bottom: -0.95em;}
-	
 	section.row.center {
-		padding:0 0 30px 0;
+		margin: 0;
+		padding:0 0 15px 0;
 	}
+	
+	div.btn-group-center {
+		text-align: center;
+		
+		div.btn-group {
+			margin: 0; 
+			text-align: center;
+			width: inherit;
+			display: inline-block;
+			float: none;
+			a, a:visited { color: $black; &:hover { text-decoration: none; } }
+		}
+	}
+	
 	
 	/*---CSS STYLES FOR TABS IN PROFILE BLOCK---*/
 	.services-nav a {
@@ -198,3 +238,5 @@ section.profile-block {
 		text-shadow: none;
 	}
 }
+
+/*-----------USERS FAN SECTION STYLES----------*/

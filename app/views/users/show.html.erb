@@ -1,24 +1,45 @@
 <% provide(:title, @user.name) %>
-<header class="goal">
-	<div class="follow-form-btn pull-left">
-		<%= render 'follow_form' if signed_in? %>
-	</div>
-	<h1><%= @user.goal %></h1>
-</header><!--/header.goal-->
+<section class="goal-container center">
+	<header class="goal">
+		<div class="follow-form-btn pull-left">
+			<%= render 'follow_form' if signed_in? %>
+		</div>
+		<h1><%= @user.goal %></h1>
+	</header><!--/header.goal-->
+</section>
 
-<section class="profile-block">
-  <div class="row">
-    <div class="span4"> 
+<% if current_user == @user %>
+  <% if @user.position_x? or @user.position_y? %>
+	<section id="position-profile" class="profile-block ui-widget-content" value="<%= @user.username %>" 
+			 style="position: absolute; top:<%= @user.position_y  %>px; left:<%= @user.position_x  %>px;">
+  <% else %>
+	<section id="position-profile" class="profile-block ui-widget-content" value="<%= @user.username %>" 
+			 style="margin-top: 100px; float:right;">
+  <% end %>
+<% else %>
+	<section class="profile-block" value="<%= @user.username %>" style="margin-top: 100px; float:right;">
+<% end %>
 	  <section class="row center">
 	    <div class="span4">
 		  <h1><%= @user.name %></h1>
-		  <h3><%= @user.school_year %></h3>
 		</div>
       </section><!--/section.row.center-->
 	  <section class="row center">
+	  	<div class="btn-group-center">
+			<div class="span4 btn-group">
+				<button class="btn"><i class="icon-user"></i></button>
+				<button class="btn"><a href="<%= user_path(@user) %>/followers">My Fans</a></button>
+				<button class="btn"><a href="<%= user_path(@user) %>/following">Friends &amp; Teammates</a></button>
+				<button class="btn"><a href="#">Pictures</a></button>
+				<button class="btn"><a href="#">Share</a></button>
+			</div>
+	  	</div>
+	  </section><!--/section.row.center-->	
+	  <section class="row center">
 	    <div class="span4">
-		  <h4><%= @user.high_school %></h4>
-		  <h4><%= @user.location %></h4>
+		  <h3><%= @user.school_year %></h3>
+		  <h3><%= @user.high_school %></h3>
+		  <h3><%= @user.location %></h3>
 		</div>
 	  </section><!--/section.row.center-->
 	  <section class="row center">
@@ -29,20 +50,21 @@
 			<p class="last"><%= @user.highlight_three %></p>
 		</div>
 	  </section><!--/section.row.center-->
+	  
+	  <!--DECIDED TO NOT INCLUDE THIS SECTION IN V1.0
 	  <section class="row center">
 	    <div class="span4">
 		  <p class="services-nav">
-		    <%= link_to facebook_icon, @user.fb_link, target: '_blank' %>
-			<%= link_to instagram_icon, @user.instagram_link, target: '_blank' %>
-			<%= link_to youtube_icon, @user.youtube_link, target: '_blank' %>			
+		    <%# link_to facebook_icon, @user.fb_link, target: '_blank' %>
+			<%# link_to instagram_icon, @user.instagram_link, target: '_blank' %>
+			<%# link_to youtube_icon, @user.youtube_link, target: '_blank' %>			
 		  </p>
 		</div>
-	  </section><!--/section.row.center-->
+	  </section>-->
+	
 	  <section class="row center">
 	    <div class="span4">
 		  <h2>Sports</h2>
 		</div>
 	  </section><!--/section.row.center-->
-    </div><!--/div.span4-->
-  </div><!--/div.row-->
 </section><!--/section.profile-block-->

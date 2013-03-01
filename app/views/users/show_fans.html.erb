@@ -1,11 +1,11 @@
 <section class="hero-unit hero-unit-gray">
   <div class="index-white">
   	<% @user ||= current_user %>
-	<h1>My Fans</h1>
+	<h1>My Friends &amp; Teammates</h1>
 	<% if @users.any? %>
 		<%= render 'users/fans' %>
 	<% else %>
-		<p style="margin: 20px;">There are currently no fans.</p>
+		<p>You have not currently fanned anyone.</p>
 	<% end %>
   </div><!--/div.index-white-->
 </section><!--/section.hero-unit.hero-unit-gray-->
